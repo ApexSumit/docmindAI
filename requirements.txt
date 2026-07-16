@@ -1,0 +1,6 @@
+streamlit
+PyMuPDF
+pdfplumber
+chromadb
+sentence-transformers
+ollama

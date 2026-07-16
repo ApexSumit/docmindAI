@@ -1,0 +1,454 @@
+Executive Summary
+A scholarship status checker guides students through verifying their eligibility, submitting the required
+documents, and tracking the application and payment status on official portals. In India, the primary portal
+is the National Scholarship Portal (NSP) (scholarships.gov.in), which covers many central and state
+schemes. NSP (and similar state portals) uses a unique One-Time Registration (OTR) or application ID for
+each student. After registering, students can apply (Fresh) or renew existing awards and then log in to 
+“Check Your Status” to see where their application stands. Updates are sent via SMS/email at each stage
+【12†L480-L486】【20†L255-L259】. Payment is made by Direct Benefit Transfer (DBT) and can be tracked
+on the PFMS payment tracker linked from NSP【1†L214-L218】【20†L271-L274】. If issues arise (e.g.
+delays or rejection), students can contact institutional/state nodal officers or file an appeal/RTI. This guide
+covers types of scholarships, eligibility checks, required documents, official portals (India & generic),
+locating your application ID, step-by-step status checks (web, SMS, helplines), timelines/status codes,
+escalation paths, privacy tips, sample chatbot Q&As, email/appeal templates, a document checklist, and
+implementation notes for chatbot integration. 
+Definitions and Scholarship Types
+Merit-based vs. Welfare-based Scholarships: NSP allows one merit-based (academic-performance)
+scholarship and one or more welfare-based (social/economic category) scholarships per year【5†L165-
+L167】. For example, merit-based schemes (like PM Scholarship) require minimum grades; welfare
+schemes target SC/ST/OBC/EWS students or persons with disabilities. 
+Fresh vs. Renewal Applications: A Fresh scholarship is a first-time application; a Renewal is for
+continuing recipients reapplying in a new academic year. Fresh applicants register on the portal,
+completing all details. Upon saving, they receive an Application ID (Permanent ID) and password
+(via SMS/email) to log in and track status【50†L93-L100】【12†L480-L486】. Renewal applicants
+simply log in with last year’s ID/DOB and update minimal information (marks, fees, etc.)【50†L104-
+L112】. Note: once an application is finally submitted, it cannot be edited【50†L121-L129】. 
+One-Time Registration (OTR): NSP uses an OTR system. Students generate a 14-digit OTR ID based
+on their Aadhaar (or Enrollment ID)【30†L217-L224】. The OTR ID is unique to the student’s
+academic career and replaces yearly logins【30†L217-L224】. (Earlier NSP versions used a temporary
+ID, but now OTR streamlines registration.) 
+Application vs. Disbursement vs. Renewal: “Application status” means where your submission is in
+the approval workflow (institute verification, state verification, etc.). “Disbursement status” means
+whether the approved scholarship has been paid to your bank account (via PFMS). “Renewal” refers
+to reapplying for a scholarship in a subsequent year. 
+Eligibility Verification Steps
+Identify Relevant Schemes: On the NSP or relevant portal, use tools like “Scholarship Eligibility” to
+list schemes you qualify for. Verify each scheme’s criteria (course type, income ceiling, caste/tribal
+status, disability, age limits, etc.) in the official guidelines. For example, certain ST scholarships
+require parental income ≤ ₹8 Lakh【16†L65-L72】. 
+• 
+• 
+• 
+• 
+1. 
+1
+
+Check Institution Enrollment: Ensure your current school/college is registered on the portal. If not
+found, contact your college’s nodal officer or state authority to add it【18†L182-L190】. 
+Gather Information: Note down all personal details (Aadhaar/EID, bank account IFSC, college AISHE
+code, etc.) exactly as per documents, because any mismatch may cause rejection【20†L249-L258】
+【18†L178-L181】. 
+Confirm Course/Level: Make sure you apply to the correct scheme for your course (pre-matric, post-
+matric, graduate, postgraduate, professional, etc.) and for the right category (SC/ST, OBC, minority,
+EBC, disability). Each scheme’s brochure (linked on NSP) lists precise conditions. 
+Required Documents (and Formats)
+Students must prepare and format certain documents before applying. (Note: if your total scholarship
+amount is under ₹50,000, no files need to be uploaded online – you only submit those docs to your college
+later【18†L148-L156】.) For scholarships ≥₹50,000, upload scanned copies of: 
+Document
+Format
+Notes
+Student Photograph
+JPG/PNG
+(≤200 KB)
+Passport-style photo
+Parental Income
+Certificate
+PDF/JPEG
+(≤200 KB)
+Signed by competent authority (Revenue Officer/
+Tehsildar). Form 16 not accepted.
+Aadhaar Card (or
+Enrollment)
+PDF/JPEG
+(≤200 KB)
+Aadhaar or EID string; name must match.
+Disability Certificate
+PDF/JPEG
+(≤200 KB)
+If applicable – issued by designated medical authority.
+Previous Year Mark
+Sheet
+PDF/JPEG
+(≤200 KB)
+Last completed exam mark sheet.
+Current Year Tuition
+Fee Receipt
+PDF/JPEG
+(≤200 KB)
+Fee paid receipt from current year.
+Bank Passbook/
+Cancelled Cheque
+PDF/JPEG
+(≤200 KB)
+Must show student’s account number and IFSC.
+Computer/Aid
+Receipts
+PDF/JPEG
+(≤200 KB)
+Only for special schemes (e.g. SWD top-class: evidence of
+assistive devices purchase)【18†L172-L176】.
+Additional (Scheme-
+specific)
+PDF/JPEG
+(≤200 KB)
+E.g. caste certificate, domicile, school bonafide, etc.
+All uploaded files must be .pdf or .jpeg and ≤200 KB each【12†L493-L497】【18†L178-L181】.
+Ensure they are legible; otherwise the application will be rejected【18†L178-L181】. 
+Mobile Number: You must register with a mobile number – it is used for OTP login and status SMS
+【12†L499-L504】. 
+2. 
+3. 
+4. 
+• 
+• 
+2
+
+Official Portals and Navigation
+India – National/State Portals
+National Scholarship Portal (NSP) – scholarships.gov.in: India’s central scholarship gateway. Under
+“Students” you’ll find links for One Time Registration, Apply for Scholarship, Scholarship
+Eligibility, Application Status, and a link to “Track Your Payment” on PFMS【1†L206-L218】
+【27†L24-L32】. Always use this official site for central schemes. Example: NSP requires login with
+your OTR ID/Aadhaar and password【30†L217-L224】【2†L25-L33】. 
+State Scholarship Portals: Many states have their own portals (e.g. Uttar Pradesh’s 
+scholarship.up.gov.in, Tamil Nadu’s tn.gov.in/scholarship, etc.). These handle state-funded
+scholarships. Functionality is similar: login with a student ID or DOB, then check “Status” or
+“Application Status.” For instance, UP’s new portal lets students track applications and disbursement
+timelines in real-time【54†L98-L107】【54†L129-L133】. Use your state portal if your scholarship is
+state-run. 
+University/Institution Portals: Some universities offer scholarships (merit or minority cells). These
+usually have web status pages or email updates. Check your college’s scholarship section. 
+PFMS Portal: For payment tracking, NSP links to the PFMS site (“Track NSP Payment”)【1†L214-
+L218】【20†L271-L274】. You enter your NSP Application ID to see disbursement details. 
+International: In other countries, similar official systems exist. For example, U.S. students check aid
+at StudentAid.gov via their FSA ID (for Pell Grants/loans)【38†L429-L432】. UK students use the 
+Student Finance England/Wales/NI portal (GOV.UK). The exact steps vary, but always log in to the
+official portal or financial aid office site to view your status. 
+Finding Your Application/Registration ID
+Upon fresh registration, NSP issues an Application ID (Permanent ID) and password once you
+click “Submit.” This ID is sent to your mobile/email【12†L480-L486】【50†L93-L100】. Memorize or
+note it down – it’s needed for renewals and status checks【12†L480-L486】【50†L93-L100】. 
+If you ever forget your ID, use the NSP “Forgot Application ID” feature. You can retrieve your ID by
+providing your bank account number or registered mobile number【42†L118-L122】. 
+After 2024, NSP uses a single OTR ID (14-digit) for all applications (fresh or renewals)【30†L217-
+L224】. In practice, “Application ID” and OTR now serve the same purpose. 
+Keep your password and DOB ready, since status checks require them (or the DOB). 
+Step-by-Step Status Check Procedures
+Online Portal (Web):
+NSP (Central): Go to Students → Application Status or click “Check Your Status.” Enter your
+Application ID (or OTR ID) and Date of Birth/Password【20†L255-L259】. The portal will show your
+current status (e.g. “Application Verified by Institute”, “Pending at State Level”, “Approved by DBT”,
+“Rejected”, etc.)【20†L255-L259】. 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+1. 
+2. 
+3
+
+State Portals: Log in to your state’s scholarship site. Look for a “Status” or “Track Application” option.
+For example, UP’s portal (scholarship.up.gov.in) provides real-time status tracking in the dashboard
+【54†L100-L107】. 
+PFMS (Payment): If your application is marked approved, check PFMS Track NSP Payment (on NSP
+or PFMS site). Enter your Application/OTR ID to view DBT payment details【20†L271-L274】. This
+shows whether funds have been credited. 
+SMS/Email: The NSP system sends SMS alerts at key stages. You should get texts when: you
+register, your application is submitted, verified by each level (institute, state, national), or rejected
+【20†L265-L269】. States like UP also send SMS/Email updates for any pendency or completion
+【20†L265-L269】【54†L129-L133】. Thus, monitor your mobile/email regularly. 
+Helpline/Offline: If you cannot access the portal, call the NSP helpdesk at 0120-6619540 (10 AM–
+6 PM) or toll-free 1800-118-111【45†L141-L146】【45†L148-L153】. Email helpdesk@nsp.gov.in with
+your Application ID and query【45†L141-L146】. For PFMS/payment issues, use helpdesk-
+pfms@gov.in or 1800-118-111【45†L141-L146】【45†L148-L153】. 
+Helpdesk/Authorities: Use NSP’s “Know Your State Nodal Officer” directory on the portal to get
+contact details of the officer(s) handling scholarship schemes【25†L118-L124】. You can email or
+visit them if your status is stuck. Each scheme also has Grievance Redressal Officers listed on NSP
+【27†L47-L52】. 
+flowchart LR
+    A[Student asks: "Check scholarship status"] --> B[Visit official portal 
+(NSP/state website)]
+    B --> C{Log in with Application ID/OTR and DOB}
+    C --> D[Select “Check Status”]
+    D --> E{Application Submitted?}
+    E -->|Yes| F[See current status (Institute Verified, State Pending, etc.)]
+    E -->|No (error)| G[Review submission; if error, correct and resubmit]
+    F --> H{Approved?}
+    H -->|Yes| I[Go to PFMS tracker; enter ID to view payment status]
+    H -->|No or Rejected| J[Status = “Rejected” or “On Hold”]
+    J --> K[Contact Institute/State Officer or use grievance]
+    I --> L[Scholarship disbursed; check bank account for credit]
+    L --> M[If not received by expected date, contact PFMS helpdesk]
+    K --> M 
+    M --> N[Use appeal/RTI if no response]
+Timelines & Common Status Codes
+Application Deadlines: Each scheme has fixed dates. NSP opens fresh/renewal cycles annually (e.g.
+AY 2026–27 opened 1 June 2026, closed 31 Oct 2026【5†L143-L151】). Institute and state
+verifications follow shortly (often mid-November)【5†L143-L151】. Always apply well before
+deadlines. 
+Verification Phases: Typical status updates include “Pending at Institute” (awaiting college
+verification), “Pending at State”, “Pending at National”, etc. Then “Approved” or “Rejected”. A “On Hold” or
+“Under Query” status may appear if documents need correction. 
+3. 
+4. 
+5. 
+6. 
+7. 
+• 
+• 
+4
+
+SMS Alerts: For example, NSP sends SMS when your application is verified or rejected at each level
+【20†L265-L269】, so students usually know immediately if a bottleneck arises. 
+Disbursement Timeline: Once approved, funds are sent via DBT. You can track on PFMS. If the
+amount is disbursed, NSP/PFMS will show “Payment Successful” and you will get a final SMS. Delays
+beyond ~1–2 months after approval could indicate a banking issue.
+Escalation & Appeals
+Institute/State Contact: If your status is stuck (e.g. pending too long) or rejected for unclear
+reasons, first contact your college’s scholarship/institute nodal officer. They can rectify
+verification errors or escalate. 
+State Nodal Officer: If unresolved, reach out to the State Nodal Officer for the scheme (details on
+NSP: Public → Nodal Officers (District/State-wise))【25†L118-L124】. Write an email detailing your case.
+National Level: NSP publishes scheme-wise Nodal/Grievance officers【27†L49-L52】. As a last
+resort, write to the national nodal officer (email in NSP “Contact Us”) or file a grievance via NSP’s
+portal link. 
+RTI (India): If all else fails in India, you may file an RTI application with the Ministry/department
+running the scheme, asking for status explanation. See RTIOnline.gov.in【48†L1-L5】. (There’s no
+specific law for scholarships, but RTI on delays is common practice.) 
+Appeal Letter: You can send a formal letter/email to the scheme authority or Ministry appeal
+committee (if any). Templates below can help. Always mention your Application ID, name, college,
+and attach supporting docs (e.g. bank passbook for payment issues, income cert for eligibility
+issues).
+Privacy and Data Security Tips
+Use Official Links Only: Always navigate to scholarships.gov.in or your official state portal via
+known URLs (do not click unverified links on social media). Check for the padlock and correct domain
+(e.g., .gov.in). 
+Protect Credentials: Do not share your login password, OTPs, or Application ID publicly or with
+anyone. NSP’s privacy policy and PFMS are government-approved and secure. 
+Avoid Scams: Be wary of unsolicited calls or websites claiming to speed up scholarships; they may
+ask for fees or personal data. If in doubt, contact the official NSP helpdesk or your institute. 
+Data Minimization: Only upload required documents in the specified size/format【12†L493-L497】,
+and store your copy securely (delete unnecessary copies). 
+Two-Factor Authentication: NSP uses OTPs on your registered mobile/email for login. Ensure your
+phone number is active and you promptly enter OTP to prevent unauthorized use. 
+Sample Chatbot Q&A Prompts
+Q: “How can I check my NSP scholarship application status?”
+A: “Visit the National Scholarship Portal (scholarships.gov.in), go to the ‘Student’ login section, and
+select “Application Status” or “Check Your Status”. Enter your Application ID (or OTR ID) and Date of
+Birth. The portal will display your current status (e.g. verified, pending, etc.)【20†L255-L259】. You
+can also track payment status via PFMS. Get SMS updates at each stage.”【20†L255-L259】
+【20†L271-L274】 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+5
+
+Q: “I lost my scholarship application ID. How do I retrieve it?”
+A: “On NSP, click ‘Forgot Application ID’. You can recover your ID by providing your bank account
+number or registered mobile number【42†L118-L122】. Otherwise, check the SMS/email sent to you
+at registration – your ID was sent there【12†L480-L486】【50†L93-L100】.” 
+Q: “What documents do I need for the scholarship application?”
+A: “Typically you need: a recent passport photo; Aadhaar or enrolment number; bank passbook; fee
+receipts; previous year marksheet; parental income certificate; and caste or disability certificate if
+applicable【18†L164-L172】【18†L178-L181】. All files must be PDF/JPEG ≤200KB【18†L178-L181】.
+If your scholarship is under ₹50K, you may not need to upload files (submit them to your college
+instead)【18†L148-L156】.” 
+Q: “My scholarship status says ‘Rejected’. What now?”
+A: “Find out why by clicking the status message. It may specify a reason (e.g. duplicate application,
+missing docs). First, contact your college nodal officer to resolve any errors. If needed, escalate to
+the state nodal officer or NSP grievance helpline【25†L118-L124】. You can also file an appeal letter
+to the scholarship authority or even an RTI with the ministry if there’s an unexplained delay.” 
+Sample Templates
+Email to NSP/Helpdesk:
+To: helpdesk@nsp.gov.in  
+Subject: NSP Scholarship Status Query (App ID: 1234567890)  
+Dear Sir/Madam,  
+I am [Your Name], a student at [College Name], applying under [Scheme 
+Name]. My Application ID is [ID]. I have not received an update since 
+[date], and the portal shows status “[Pending at Institute]”. Kindly advise 
+if any action is required from my side. My registered mobile/email is 
+[X].  
+Thank you,  
+[Your Name], [Course/Year], [Roll/Registration No.], [College]  
+Appeal/Grievance Letter (to State/Ministry):
+[Your Name]  
+[Address]  
+[Email/Mobile]  
+Date: [DD-MM-YYYY]  
+To  
+The State Nodal Officer (Scholarships) / [Ministry Officer]  
+[Address]  
+• 
+• 
+• 
+• 
+• 
+6
+
+Subject: Appeal regarding NSP Scholarship Application (App ID: 
+1234567890)  
+Respected Sir/Madam,  
+I applied for the [Scheme Name] scholarship for AY 202[ ] under Application 
+ID 1234567890. Despite meeting all eligibility and timely submission, the 
+portal status shows “[Rejected]/[Stuck Pending]” with no clear reason.  
+I request you to kindly review my case. Attached are copies of my 
+application form, mark sheet, income certificate, and bank details. I 
+believe my application meets all criteria (previous year marks: 85%; family 
+income: ₹[Amount], etc.).  
+I would be grateful if you could instruct the concerned authorities to 
+verify and approve my application. Thank you for your attention.  
+Sincerely,  
+[Your Name]  
+[College, Course]  
+Document Checklist:
+Required Document
+Upload?
+Details/Source
+Student Passport Photo
+Yes
+JPG/PNG, < 200KB, recent ID-photo style
+Aadhaar Card/Enrollment ID
+Yes
+Downloaded/electronic PDF
+Bank Passbook/Cancelled Cheque
+Yes
+Showing Account No., IFSC
+Fee Payment Receipt
+Yes
+From current year, PDF/JPEG
+Previous Year Mark Sheet
+Yes
+From Board/College, PDF
+Parental Income Certificate
+Yes
+Govt. issued (Form16 not ok)
+Caste/Domicile Certificate
+Yes*
+If you belong to reserved category
+Disability Certificate
+Yes*
+For PwD students
+School Bonafide Certificate
+Yes*
+If studying outside domicile state
+NTF Documents
+(*Required only if applicable to your case or scheme.) 
+Implementation Notes for Chatbot Integration
+Content Metadata: Tag answers with relevant metadata (portal names, scheme names, location).
+E.g. include source: NSP , region: India , topic: scholarship status . This helps filter
+and present context to the user. 
+• 
+• 
+7
+
+Citations: Embed factual statements with citations from official sources (as above) so the chatbot
+can cite them in its answers. For instance, use NSP FAQ or government articles with 
+【source†lines】. 
+Fallback Flow: If a question falls outside known data (e.g. a novel scholarship scheme), the bot
+should politely say it doesn’t have information, and suggest contacting helpdesks or doing an RTI,
+rather than guessing. 
+Language and Clarity: Use clear, concise language and bullet lists for steps. Provide definitions
+before using acronyms. Offer links to official portals. 
+User Prompts: Prepare prompts like “Check NSP status”, “NSP application ID”, etc., mapping them to
+the relevant FAQ answer. 
+Updates: Keep content updated annually (update deadlines and portal links each AY). 
+Testing: Ensure the chat interface preserves formatting (lists, code blocks) for readability. 
+Portals Comparison (India vs. International)
+Portal/Service
+Region
+Purpose
+Notes
+National
+Scholarship
+Portal (NSP)
+India
+Central Govt scholarships
+(merit/welfare). Apply, track
+status, track payment (via
+PFMS)【20†L255-L259】
+【1†L214-L218】. Uses OTR/
+Aadhaar login.
+Official central portal; one-stop
+for many schemes.
+State Scholarship
+Portals (e.g. UP)
+India
+State-funded scholarships.
+Application & status check
+for state schemes.
+E.g. UP scholarship portal
+(scholarship.up.gov.in) allows
+real-time tracking【54†L98-
+L107】. State-specific eligibility/
+rules.
+StudentAid.gov
+(FAFSA)
+USA
+Federal student aid (grants,
+loans). Apply with FSA ID,
+track Federal aid status.
+Use Fed Student Aid account
+login. Not scholarship-specific
+but financial aid including Pell
+grants.
+Student Finance
+(Gov.UK)
+UK
+Student loans/grants for
+tuition/maintenance.
+Students log in with GOV.UK
+Verify.
+Official portal for England/Wales/
+NI. Check loan/grant status and
+payments.
+Chevening/
+Others
+International
+Specific scholarship
+programs (e.g. Chevening
+scholarships UK). Check
+status via program portal.
+Country/Program-specific (e.g.
+Chevening.org, Erasmus+ portal).
+Follow each program’s
+procedures.
+Each portal uses secure login (government ID, Aadhaar, etc.), provides a status dashboard, and often sends
+email/SMS alerts. Choose the portal relevant to your scholarship and use the official check-status or login
+feature to track your application.
+• 
+• 
+• 
+• 
+• 
+• 
+8
+
+Sources: Official NSP/DBT FAQs and guidelines【12†L480-L486】【18†L164-L172】【20†L255-L259】
+【45†L141-L146】; government press releases【54†L100-L107】【54†L129-L133】; and NSP site content
+【5†L165-L167】【30†L217-L224】. Each step above is grounded in these primary sources.

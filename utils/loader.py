@@ -8,6 +8,6 @@ def load_text(file_path):
 
 if __name__ == "__main__":
 
-    text = load_text("docmindAI/data/scholarship_rules.txt")
+    text = load_text("data/scholarship_rules.txt")
 
     print(text[:1000])

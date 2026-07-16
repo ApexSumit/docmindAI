@@ -17,12 +17,11 @@ def extract_text(pdf_path):
 
     document.close()
 
-    return text
+    return text 
 
 
 if __name__ == "__main__":
-
-    pdf_path = "DOC/docmindAI/uploads/Executive Summary.pdf"
+    pdf_path = "uploads/Executive Summary.pdf"
 
     extracted_text = extract_text(pdf_path)
 
